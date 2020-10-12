@@ -20,7 +20,11 @@ OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 ``` 
 ## expected result
 ```sh
-./gradlew clean test
+ ./gradlew clean test                                   
+
+> Task :compileJava
+Note: /Users/alphawong/IdeaProjects/coding/src/main/java/DateString.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
 
 > Task :test
 
@@ -28,11 +32,19 @@ AppTest > testMoreThanAMonthApartBetweenFebAndMar PASSED
 
 AppTest > testMoreThanAMonthApartWithDifferenceYear PASSED
 
-AppTest > testMoreThanAMonthApartWithSameYear PASSED
+AppTest > testMoreThanAMonthApartWithInvalidMonth PASSED
 
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
-Use '--warning-mode all' to show the individual deprecation warnings.
-See https://docs.gradle.org/6.6.1/userguide/command_line_interface.html#sec:command_line_warnings
+AppTest > testMoreThanAMonthApartWithInvalidDayOfMonth PASSED
+
+AppTest > testMoreThanAMonthApartWithAIsLatestButLessThanAMonthGap PASSED
+
+AppTest > testMoreThanAMonthApartWithInvalidNegativeDayOfMonth PASSED
+
+AppTest > testMoreThanAMonthApartWithSameDate PASSED
+
+AppTest > testMoreThanAMonthApartWithAIsLatest PASSED
+
+AppTest > testMoreThanAMonthApartWithDifferenceBCYear PASSED
 
 BUILD SUCCESSFUL in 1s
 4 actionable tasks: 4 executed
