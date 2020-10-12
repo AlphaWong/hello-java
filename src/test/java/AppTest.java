@@ -1,4 +1,6 @@
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
@@ -7,10 +9,69 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(JUnit4.class)
 public class AppTest {
+
+    @Rule
+    public ExpectedException exceptionRule = ExpectedException.none();
+
+    @Test
+    public void testMoreThanAMonthApartWithInvalidMonth() {
+        exceptionRule.expectMessage("invalid month: -1");
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = -1;
+        a.day = 1;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 1;
+        b.day = 1;
+        DateString.moreThanAMonthApart(a, b);
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithInvalidDayOfMonth() {
+        exceptionRule.expectMessage("invalid day of month: 30");
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 2;
+        a.day = 30;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 1;
+        b.day = 1;
+        DateString.moreThanAMonthApart(a, b);
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithInvalidNegativeDayOfMonth() {
+        exceptionRule.expectMessage("invalid day of month: -1");
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 2;
+        a.day = -1;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 1;
+        b.day = 1;
+        DateString.moreThanAMonthApart(a, b);
+    }
+
     @Test
     public void testMoreThanAMonthApartWithDifferenceYear() {
         DateString a = new DateString();
         a.year = 2000;
+        a.month = 1;
+        a.day = 1;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 1;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithDifferenceBCYear() {
+        DateString a = new DateString();
+        a.year = -1;
         a.month = 1;
         a.day = 1;
         DateString b = new DateString();
