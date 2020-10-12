@@ -58,13 +58,13 @@ public class AppTest {
     @Test
     public void testMoreThanAMonthApartWithDifferenceYear() {
         DateString a = new DateString();
-        a.year = 2000;
-        a.month = 1;
-        a.day = 1;
+        a.year = 1989;
+        a.month = 6;
+        a.day = 4;
         DateString b = new DateString();
-        b.year = 2001;
-        b.month = 1;
-        b.day = 1;
+        b.year = 2019;
+        b.month = 7;
+        b.day = 21;
         assertTrue(DateString.moreThanAMonthApart(a, b));
     }
 
@@ -97,25 +97,25 @@ public class AppTest {
     @Test
     public void testMoreThanAMonthApartWithSameDate() {
         DateString a = new DateString();
-        a.year = 2000;
-        a.month = 1;
-        a.day = 1;
+        a.year = 2019;
+        a.month = 8;
+        a.day = 31;
         DateString b = new DateString();
-        b.year = 2000;
-        b.month = 1;
-        b.day = 1;
+        b.year = 2019;
+        b.month = 8;
+        b.day = 31;
         assertFalse(DateString.moreThanAMonthApart(a, b));
     }
 
     @Test
     public void testMoreThanAMonthApartWithAIsLatest() {
         DateString a = new DateString();
-        a.year = 2001;
-        a.month = 1;
+        a.year = 2019;
+        a.month = 10;
         a.day = 1;
         DateString b = new DateString();
-        b.year = 2000;
-        b.month = 1;
+        b.year = 2018;
+        b.month = 10;
         b.day = 1;
         assertTrue(DateString.moreThanAMonthApart(a, b));
     }
