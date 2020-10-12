@@ -8,22 +8,19 @@ Cannot use standard date/time classes.
 
 # pre-condition
 ```
-java --version
-openjdk 15 2020-09-15
-OpenJDK Runtime Environment AdoptOpenJDK (build 15+36)
-OpenJDK 64-Bit Server VM AdoptOpenJDK (build 15+36, mixed mode, sharing)
-
-gradle -version
-Gradle 6.6.1
+java -version 
+openjdk version "1.8.0_265"
+OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_265-b01)
+OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 ```
 
 # run test
 ```sh
-gradle :cleanTest :test 
+./gradlew clean test 
 ``` 
 ## expected result
 ```sh
- gradle :cleanTest :test
+./gradlew clean test
 
 > Task :test
 

@@ -63,12 +63,12 @@ public class AppTest {
     public void testMoreThanAMonthApartWithAIsLatestButLessThanAMonthGap() {
         DateString a = new DateString();
         a.year = 2001;
-        a.month = 1;
+        a.month = 2;
         a.day = 1;
         DateString b = new DateString();
         b.year = 2001;
         b.month = 1;
-        b.day = 2;
+        b.day = 19;
         assertFalse(DateString.moreThanAMonthApart(a, b));
     }
 }
