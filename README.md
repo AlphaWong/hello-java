@@ -1,3 +1,4 @@
+![build](https://travis-ci.com/AlphaWong/hello-java.svg?branch=master&status=passed)
 # assumption
 `moreThanAMonthApart` means the duration between two data.
 It does not mean they are stay at the same month.
