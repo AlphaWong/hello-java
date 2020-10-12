@@ -29,11 +29,11 @@ public class AppTest {
 
     @Test
     public void testMoreThanAMonthApartWithInvalidDayOfMonth() {
-        exceptionRule.expectMessage("invalid day of month: 30");
+        exceptionRule.expectMessage("invalid day of month: 35");
         DateString a = new DateString();
-        a.year = 2000;
-        a.month = 2;
-        a.day = 30;
+        a.year = 1989;
+        a.month = 5;
+        a.day = 35;
         DateString b = new DateString();
         b.year = 2001;
         b.month = 1;
