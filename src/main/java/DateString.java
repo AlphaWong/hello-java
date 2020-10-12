@@ -9,12 +9,18 @@ public class DateString {
     public static boolean moreThanAMonthApart(final DateString a, final DateString b) {
         GregorianCalendar calendarA = new GregorianCalendar(a.year, a.month, a.day);
         GregorianCalendar calendarB = new GregorianCalendar(b.year, b.month, b.day);
-        calendarB.add(Calendar.MONTH, -1);
-
-        // After deduce a month, if it still behind.
-        // it still more than a month
         if (calendarA.compareTo(calendarB) == -1) {
-            return true;
+            calendarB.add(Calendar.MONTH, -1);
+            // After deduce a month, if calendarA still ahead.
+            // it still more than a month
+            if (calendarA.compareTo(calendarB) == -1) {
+                return true;
+            }
+        } else {
+            calendarA.add(Calendar.MONTH, -1);
+            if (calendarB.compareTo(calendarA) == -1) {
+                return true;
+            }
         }
         return false;
     }

@@ -34,15 +34,41 @@ public class AppTest {
     }
 
     @Test
-    public void testMoreThanAMonthApartWithSameYear() {
+    public void testMoreThanAMonthApartWithSameDate() {
         DateString a = new DateString();
-        a.year = 1;
+        a.year = 2000;
         a.month = 1;
         a.day = 1;
         DateString b = new DateString();
-        b.year = 1;
+        b.year = 2000;
         b.month = 1;
         b.day = 1;
+        assertFalse(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithAIsLatest() {
+        DateString a = new DateString();
+        a.year = 2001;
+        a.month = 1;
+        a.day = 1;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 1;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithAIsLatestButLessThanAMonthGap() {
+        DateString a = new DateString();
+        a.year = 2001;
+        a.month = 1;
+        a.day = 1;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 1;
+        b.day = 2;
         assertFalse(DateString.moreThanAMonthApart(a, b));
     }
 }
