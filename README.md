@@ -1,6 +1,6 @@
-![build](https://travis-ci.com/AlphaWong/hello-java.svg?branch=master&status=passed)
+[![Build Status](https://travis-ci.com/AlphaWong/hello-java.svg?branch=master)](https://travis-ci.com/AlphaWong/hello-java)
 # assumption
-`moreThanAMonthApart` means the duration between two data.
+`moreThanAMonthApart` means the duration between two date.
 It does not mean they are stay at the same month.
 
 # restriction
