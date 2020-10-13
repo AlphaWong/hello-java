@@ -1,4 +1,3 @@
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 
@@ -58,14 +57,14 @@ public class DateString {
         GregorianCalendar calendarA = new GregorianCalendar(a.year, a.month, a.day);
         GregorianCalendar calendarB = new GregorianCalendar(b.year, b.month, b.day);
         if (calendarA.compareTo(calendarB) == -1) {
-            calendarB.add(Calendar.MONTH, -1);
+            calendarB.add(GregorianCalendar.MONTH, -1);
             // After deduce a month, if calendarA still ahead.
             // it still more than a month
             if (calendarA.compareTo(calendarB) == -1) {
                 return true;
             }
         } else {
-            calendarA.add(Calendar.MONTH, -1);
+            calendarA.add(GregorianCalendar.MONTH, -1);
             if (calendarB.compareTo(calendarA) == -1) {
                 return true;
             }
