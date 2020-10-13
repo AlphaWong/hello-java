@@ -24,3 +24,12 @@ test {
     }
     maxHeapSize = '1G'
 }
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
+
+check.dependsOn jacocoTestReport
