@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/AlphaWong/hello-java.svg?branch=master)](https://travis-ci.com/AlphaWong/hello-java)
+[![codecov](https://codecov.io/gh/AlphaWong/hello-java/branch/master/graph/badge.svg)](https://codecov.io/gh/AlphaWong/hello-java)
 # assumption
 `moreThanAMonthApart` means the duration between two date.
 It does not mean they are stay at the same month.
