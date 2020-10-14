@@ -1,8 +1,7 @@
 [![Build Status](https://travis-ci.com/AlphaWong/hello-java.svg?branch=master)](https://travis-ci.com/AlphaWong/hello-java)
 [![codecov](https://codecov.io/gh/AlphaWong/hello-java/branch/master/graph/badge.svg)](https://codecov.io/gh/AlphaWong/hello-java)
 # assumption
-`moreThanAMonthApart` means the duration between two date.
-It does not mean they are stay at the same month.
+`moreThanAMonthApart` A month is from some day to the same day in the following month, regardless of the number of days. So, Jan 3rd to Feb 3rd is exactly one month. Jan 3rd to Feb 4th is more than a month.
 
 # restriction
 Cannot use standard date/time classes.
