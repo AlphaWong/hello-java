@@ -438,6 +438,45 @@ public class AppTest {
     }
 
     @Test
+    public void testMoreThanAMonthApartBetweenJan30AndFeb() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 1;
+        a.day = 30;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 3;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenJan31AndFeb() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 1;
+        a.day = 30;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 3;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenJan29AndFeb() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 1;
+        a.day = 29;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 3;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
     public void testMoreThanAMonthApartBetweenFebAndMar() {
         DateString a = new DateString();
         a.year = 2000;
