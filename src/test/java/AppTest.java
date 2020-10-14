@@ -451,6 +451,71 @@ public class AppTest {
     }
 
     @Test
+    public void testMoreThanAMonthApartBetweenMayAndJul() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 5;
+        a.day = 31;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 7;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenJulAndAug() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 7;
+        a.day = 31;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 9;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenAugAndSep() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 8;
+        a.day = 31;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 10;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenOctAndNov() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 10;
+        a.day = 31;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 12;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartBetweenDecAndJanCrossYear() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 12;
+        a.day = 31;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 2;
+        b.day = 1;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
     public void testMoreThanAMonthApartWithSameDate() {
         DateString a = new DateString();
         a.year = 2019;
