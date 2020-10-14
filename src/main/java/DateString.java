@@ -50,7 +50,88 @@ public class DateString {
         return true;
     }
 
-    public static boolean moreThanAMonthApart(final DateString a, final DateString b) throws Error {
+    public static DateString getAMonthLater(final DateString a) {
+        DateString aMonthLater = new DateString();
+        aMonthLater.year = a.year;
+        if (a.month == 1 && a.day == 28) {
+            if (isLeapYear(a.year)) {
+                aMonthLater.month = 2;
+                aMonthLater.day = 29;
+            } else {
+                aMonthLater.month = 3;
+                aMonthLater.day = 1;
+            }
+        } else if (a.month == 1 && (a.day == 29 || a.day == 30 || a.day == 31)) {
+            aMonthLater.month = 3;
+            aMonthLater.day = 1;
+        } else if (a.month == 3 && a.day == 31) {
+            aMonthLater.month = 5;
+            aMonthLater.day = 1;
+        } else if (a.month == 5 && a.day == 31) {
+            aMonthLater.month = 7;
+            aMonthLater.day = 1;
+        } else if (a.month == 7 && a.day == 31) {
+            aMonthLater.month = 9;
+            aMonthLater.day = 1;
+        } else if (a.month == 8 && a.day == 31) {
+            aMonthLater.month = 10;
+            aMonthLater.day = 1;
+        } else if (a.month == 10 && a.day == 31) {
+            aMonthLater.month = 12;
+            aMonthLater.day = 1;
+        } else if (a.month == 12 && a.day == 31) {
+            aMonthLater.year = a.year + 1;
+            aMonthLater.month = 2;
+            aMonthLater.day = 1;
+        } else {
+            aMonthLater.month = a.month + 1;
+            if (aMonthLater.month == 13) {
+                aMonthLater.month = 1;
+                aMonthLater.year = a.year + 1;
+            }
+            aMonthLater.day = a.day + 1;
+        }
+        return aMonthLater;
+    }
+
+    public static boolean isLaterOrEqualThan(final DateString aMonthLater, final DateString b) {
+        // aMonthLater 19991010
+        if (b.year == aMonthLater.year) {
+            if (b.month == aMonthLater.month) {
+                if (b.day >= aMonthLater.day) {
+                    // b 19991011
+                    // b 19991010
+                    return true;
+                } else {
+                    // b 19991001
+                    return false;
+                }
+            } else if (b.month > aMonthLater.month) {
+                // b 19991110
+                return true;
+            } else {
+                // b 19990910
+                return false;
+            }
+        } else if (b.year > aMonthLater.year) {
+            // b 20000910
+            return true;
+        } else if (aMonthLater.year > b.year) {
+            // b 19980910
+            return false;
+        }
+        return false;
+    }
+
+    public static boolean moreThanAMonthApart(final DateString a, final DateString b) {
+        validDate(a);
+        validDate(b);
+
+        DateString aMonthLater = getAMonthLater(a);
+        return isLaterOrEqualThan(aMonthLater, b);
+    }
+
+    public static boolean moreThanAMonthApartBuildIn(final DateString a, final DateString b) throws Error {
         validDate(a);
         validDate(b);
 
