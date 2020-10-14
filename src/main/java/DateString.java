@@ -126,9 +126,12 @@ public class DateString {
     public static boolean moreThanAMonthApart(final DateString a, final DateString b) {
         validDate(a);
         validDate(b);
-
-        DateString aMonthLater = getAMonthLater(a);
-        return isLaterOrEqualThan(aMonthLater, b);
+        if (isLaterOrEqualThan(a, b)) {
+            DateString aMonthLater = getAMonthLater(a);
+            return isLaterOrEqualThan(aMonthLater, b);
+        }
+        DateString aMonthLater = getAMonthLater(b);
+        return isLaterOrEqualThan(aMonthLater, a);
     }
 
     public static boolean moreThanAMonthApartBuildIn(final DateString a, final DateString b) throws Error {
