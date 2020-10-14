@@ -7,7 +7,7 @@
 Cannot use standard date/time classes.
 
 # pre-condition
-```
+```console
 java -version 
 openjdk version "1.8.0_265"
 OpenJDK Runtime Environment (AdoptOpenJDK)(build 1.8.0_265-b01)
@@ -15,39 +15,103 @@ OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 ```
 
 # run test
-```sh
+```console
 ./gradlew clean test 
 ``` 
 ## expected result
-```sh
+```console
  ./gradlew clean test                                   
 
-> Task :compileJava
-Note: /Users/alphawong/IdeaProjects/coding/src/main/java/DateString.java uses unchecked or unsafe operations.
-Note: Recompile with -Xlint:unchecked for details.
+AppTest > testMoreThanAMonthApartWithCross31And30Day PASSED
 
-> Task :test
+AppTest > testIsLaterOrEqualThanInSameMonthOneDayBeforeDate PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithCrossYear PASSED
+
+AppTest > testMoreThanAMonthApartBetweenJan30AndFeb PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithDifferenceBCYear PASSED
+
+AppTest > testGetAMonthLaterFEB PASSED
+
+AppTest > testMoreThanAMonthApartBetweenJulAndAug PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithInvalidDayOfMonth PASSED
+
+AppTest > testMoreThanAMonthApartBuildInBetweenFebAndMar PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithDifferenceYear PASSED
 
 AppTest > testMoreThanAMonthApartBetweenFebAndMar PASSED
 
+AppTest > testMoreThanAMonthApartBetweenJan31AndFeb PASSED
+
 AppTest > testMoreThanAMonthApartWithDifferenceYear PASSED
+
+AppTest > testIsLaterOrEqualThanInSameMonthOneDayAfterDate PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithInvalidMonth PASSED
 
 AppTest > testMoreThanAMonthApartWithInvalidMonth PASSED
 
+AppTest > testMoreThanAMonthApartBetweenOctAndNov PASSED
+
 AppTest > testMoreThanAMonthApartWithInvalidDayOfMonth PASSED
+
+AppTest > testGetAMonthLaterFromJAN2FEBInLeapYear PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithInvalidNegativeDayOfMonth PASSED
+
+AppTest > testMoreThanAMonthApartBetweenMayAndJul PASSED
 
 AppTest > testMoreThanAMonthApartWithAIsLatestButLessThanAMonthGap PASSED
 
 AppTest > testMoreThanAMonthApartWithInvalidNegativeDayOfMonth PASSED
 
+AppTest > testIsLaterOrEqualThanOneMonthBeforeDate PASSED
+
+AppTest > testMoreThanAMonthApartBetweenJan29AndFeb PASSED
+
+AppTest > testGetAMonthLater PASSED
+
+AppTest > testGetAMonthLaterCrossYear PASSED
+
+AppTest > testGetAMonthLaterFromMAYToJUN PASSED
+
+AppTest > testGetAMonthLaterFromJAN2FEBInNonLeapYear PASSED
+
 AppTest > testMoreThanAMonthApartWithSameDate PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithCross31And30Day PASSED
 
 AppTest > testMoreThanAMonthApartWithAIsLatest PASSED
 
+AppTest > testIsLaterOrEqualThanCrossYear PASSED
+
 AppTest > testMoreThanAMonthApartWithDifferenceBCYear PASSED
 
-BUILD SUCCESSFUL in 1s
-4 actionable tasks: 4 executed
+AppTest > testMoreThanAMonthApartBuildInWithAIsLatest PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithSameDate PASSED
+
+AppTest > testMoreThanAMonthApartBuildInCrossFEB28 PASSED
+
+AppTest > testMoreThanAMonthApartCrossFEB28 PASSED
+
+AppTest > testIsLaterOrEqualThanInEqualDate PASSED
+
+AppTest > testMoreThanAMonthApartBetweenAugAndSep PASSED
+
+AppTest > testMoreThanAMonthApartWithCrossYear PASSED
+
+AppTest > testMoreThanAMonthApartBetweenDecAndJanCrossYear PASSED
+
+AppTest > testMoreThanAMonthApartBuildInWithAIsLatestButLessThanAMonthGap PASSED
+
+> Task :jacocoTestReport
+
+BUILD SUCCESSFUL in 6s
+5 actionable tasks: 5 executed
 ```
 
 # improvement ?
