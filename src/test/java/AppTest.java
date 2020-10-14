@@ -69,6 +69,19 @@ public class AppTest {
     }
 
     @Test
+    public void testMoreThanAMonthApartCrossFEB28() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 2;
+        a.day = 28;
+        DateString b = new DateString();
+        b.year = 2000;
+        b.month = 3;
+        b.day = 29;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
     public void testMoreThanAMonthApartWithCrossYear() {
         DateString a = new DateString();
         a.year = 2000;
