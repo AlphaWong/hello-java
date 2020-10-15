@@ -592,4 +592,40 @@ public class AppTest {
         b.day = 19;
         assertFalse(DateString.moreThanAMonthApart(a, b));
     }
+
+    @Test
+    public void testIsValidDayOfMonth29FebInLeapYear() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 2;
+        a.day = 29;
+        assertTrue(DateString.isValidDayOfMonth(a));
+    }
+
+    @Test
+    public void testIsValidDayOfMonth29FebInNonLeapYear() {
+        DateString a = new DateString();
+        a.year = 2001;
+        a.month = 2;
+        a.day = 29;
+        assertFalse(DateString.isValidDayOfMonth(a));
+    }
+
+    @Test
+    public void testIsValidDayOfMonth35May() {
+        DateString a = new DateString();
+        a.year = 1989;
+        a.month = 5;
+        a.day = 35;
+        assertFalse(DateString.isValidDayOfMonth(a));
+    }
+
+    @Test
+    public void testIsValidDayOfMonthSuccess() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 1;
+        a.day = 15;
+        assertTrue(DateString.isValidDayOfMonth(a));
+    }
 }

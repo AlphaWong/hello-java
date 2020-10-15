@@ -23,6 +23,7 @@ public class DateString {
         }
         HashMap months = new HashMap<Integer, Integer>();
         months.put(1, 31);
+        months.put(2, isLeapYear(dateString.year) ? 29 : 28);
         months.put(3, 31);
         months.put(4, 30);
         months.put(5, 31);
@@ -33,10 +34,6 @@ public class DateString {
         months.put(10, 31);
         months.put(11, 30);
         months.put(12, 31);
-        if (isLeapYear(dateString.year)) {
-            months.put(2, 29);
-        }
-        months.put(2, 28);
         return dateString.day <= ((Integer) months.get(dateString.month)).intValue();
     }
 
