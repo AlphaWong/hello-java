@@ -594,6 +594,33 @@ public class AppTest {
     }
 
     @Test
+    public void testMoreThanAMonthApartWithSuccessInLeapYear29Feb() {
+        DateString a = new DateString();
+        a.year = 2000;
+        a.month = 2;
+        a.day = 29;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 3;
+        b.day = 30;
+        assertTrue(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
+    public void testMoreThanAMonthApartWithInvalidDay29FebInNonLeapYear() {
+        exceptionRule.expectMessage("invalid day of month: 29");
+        DateString a = new DateString();
+        a.year = 2001;
+        a.month = 2;
+        a.day = 29;
+        DateString b = new DateString();
+        b.year = 2001;
+        b.month = 3;
+        b.day = 30;
+        assertFalse(DateString.moreThanAMonthApart(a, b));
+    }
+
+    @Test
     public void testIsValidDayOfMonth29FebInLeapYear() {
         DateString a = new DateString();
         a.year = 2000;
