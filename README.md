@@ -56,6 +56,7 @@ AppTest > testGetAMonthLaterCrossYear PASSED
 AppTest > testGetAMonthLaterFromMAYToJUN PASSED
 AppTest > testGetAMonthLaterFromJAN2FEBInNonLeapYear PASSED
 AppTest > testMoreThanAMonthApartWithSameDate PASSED
+AppTest > testValidDateFailWith13Month PASSED
 AppTest > testMoreThanAMonthApartBuildInWithCross31And30Day PASSED
 AppTest > testIsValidDayOfMonth29FebInLeapYear PASSED
 AppTest > testMoreThanAMonthApartWithAIsLatest PASSED
