@@ -21,6 +21,13 @@ OpenJDK 64-Bit Server VM (AdoptOpenJDK)(build 25.265-b01, mixed mode)
 ## expected result
 ```console
  ./gradlew clean test
+> Task :compileJava UP-TO-DATE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :compileTestJava UP-TO-DATE
+> Task :processTestResources NO-SOURCE
+> Task :testClasses UP-TO-DATE
+> Task :test
 AppTest > testMoreThanAMonthApartWithCross31And30Day PASSED
 AppTest > testMoreThanAMonthApartWithSuccessInLeapYear29Feb PASSED
 AppTest > testIsLaterOrEqualThanInSameMonthOneDayBeforeDate PASSED
@@ -57,6 +64,7 @@ AppTest > testGetAMonthLaterFromMAYToJUN PASSED
 AppTest > testGetAMonthLaterFromJAN2FEBInNonLeapYear PASSED
 AppTest > testMoreThanAMonthApartWithSameDate PASSED
 AppTest > testValidDateFailWith13Month PASSED
+AppTest > testIsValidDayOfZeroMonth PASSED
 AppTest > testMoreThanAMonthApartBuildInWithCross31And30Day PASSED
 AppTest > testIsValidDayOfMonth29FebInLeapYear PASSED
 AppTest > testMoreThanAMonthApartWithAIsLatest PASSED

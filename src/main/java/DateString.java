@@ -38,7 +38,8 @@ public class DateString {
     }
 
     public static boolean validDate(DateString dateString) throws Error {
-        if (0 > dateString.month || dateString.month > 12) {
+        // 0 < N <= 12
+        if (1 > dateString.month || dateString.month > 12) {
             throw new Error(String.format("invalid month: %s", dateString.month));
         }
         if (!isValidDayOfMonth(dateString)) {
