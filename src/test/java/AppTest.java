@@ -620,6 +620,17 @@ public class AppTest {
         assertFalse(DateString.moreThanAMonthApart(a, b));
     }
 
+
+    @Test
+    public void testValidDateFailWith13Month() {
+        exceptionRule.expectMessage("invalid month: 13");
+        DateString a = new DateString();
+        a.year = 2001;
+        a.month = 13;
+        a.day = 29;
+        assertFalse(DateString.validDate(a));
+    }
+
     @Test
     public void testIsValidDayOfMonth29FebInLeapYear() {
         DateString a = new DateString();
