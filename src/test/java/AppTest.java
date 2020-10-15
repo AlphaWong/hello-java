@@ -631,6 +631,17 @@ public class AppTest {
         assertFalse(DateString.validDate(a));
     }
 
+
+    @Test
+    public void testIsValidDayOfZeroMonth() {
+        exceptionRule.expectMessage("invalid month: 0");
+        DateString a = new DateString();
+        a.year = 1989;
+        a.month = 0;
+        a.day = 2;
+        assertFalse(DateString.validDate(a));
+    }
+
     @Test
     public void testIsValidDayOfMonth29FebInLeapYear() {
         DateString a = new DateString();
